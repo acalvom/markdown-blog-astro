@@ -1,2 +1,32 @@
 ---
+import HeaderButton from './HeaderButton.astro'
+import HeaderIcon from './HeaderIcon.astro'
+import AppIcon from '@assets/icon.svg'
+import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '@constants/iconPaths'
 ---
+
+<header class="max-w-screen mx-auto px-4 py-4 md:px-8">
+  <nav class="flex w-full flex-col items-center justify-between md:flex-row">
+    <div class="flex flex-row items-center gap-2 py-2">
+      <img src={AppIcon.src} alt="App Icon" class="h-12 w-12" />
+    </div>
+    <div class="flex flex-row flex-wrap justify-center py-2">
+      <HeaderButton path="/first">
+        <HeaderIcon slot="before" paths={rocketIconPaths} />
+        Page 1
+      </HeaderButton>
+      <HeaderButton path="/second">
+        <HeaderIcon slot="before" paths={aboutIconPaths} />
+        Page 2
+      </HeaderButton>
+      <HeaderButton path="/third">
+        <HeaderIcon slot="before" paths={sofaIconPaths} />
+        Page 3
+      </HeaderButton>
+      <HeaderButton path="/fourth">
+        <HeaderIcon slot="before" paths={alignIconPaths} />
+        Page 4
+      </HeaderButton>
+    </div>
+  </nav>
+</header>
