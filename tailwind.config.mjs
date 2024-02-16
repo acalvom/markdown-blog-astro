@@ -4,6 +4,19 @@ export default {
   theme: {
     extend: {
       colors: {
+        red: {
+          50: '#fff1f3',
+          100: '#ffdfe4',
+          200: '#ffc5cd',
+          300: '#ff9dab',
+          400: '#ff647a',
+          500: '#ff2746',
+          600: '#ed1534',
+          700: '#c80d28',
+          800: '#a50f25',
+          900: '#881425',
+          950: '#4b040e'
+        },
         teal: {
           50: '#f0fdfa',
           100: '#ccfbf1',
