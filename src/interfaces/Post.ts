@@ -1,7 +1,7 @@
 export type TPostMeta = {
   title: string
   description: string
-  pubDate: string
+  pubDate: Date
   author: string
   image: {
     src: string
