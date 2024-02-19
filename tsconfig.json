@@ -6,9 +6,10 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@constants/*": ["src/constants/*"],
+      "@interfaces/*": ["src/interfaces/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }
