@@ -1,0 +1,71 @@
+---
+import Layout from './Layout.astro'
+import PageTitle from '@components/PageTitle/PageTitle.astro'
+import { formatDate } from '@utils/date.ts'
+import type { TPostMeta } from '@interfaces/Post'
+
+interface Props {
+  frontmatter: TPostMeta
+}
+
+const { frontmatter } = Astro.props
+const { title, description, author, image, pubDate } = frontmatter
+---
+
+<Layout title={frontmatter.title}>
+  <article class="prose mx-auto max-w-3xl px-6">
+    <PageTitle title={title} subtitle={description} />
+    <img class="w-full" src={image.src} alt={image.alt} />
+    <p class="my-4 text-xs lg:text-sm font-thin italic text-gray-200">
+      Published on {formatDate(pubDate)} by <strong>{author}</strong>
+    </p>
+    <slot />
+  </article>
+</Layout>
+
+<style is:global>
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+    color-scheme: light dark;
+  }
+
+  body {
+    --sm: 640px;
+    --md: 768px;
+    --lg: 1024px;
+    --xl: 1280px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-weight: 100;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-align: justify;
+    margin-bottom: 12px;
+  }
+
+  ol {
+    margin-left: 24px;
+  }
+
+  li::marker {
+    content: '💡 ';
+  }
+
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.85rem;
+    }
+  }
+</style>
