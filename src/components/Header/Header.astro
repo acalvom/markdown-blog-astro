@@ -7,9 +7,9 @@ import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '
 
 <header class="max-w-screen mx-auto px-4 py-4 md:px-8">
   <nav class="flex w-full flex-col items-center justify-between md:flex-row">
-    <div class="flex flex-row items-center gap-2 py-2">
+    <HeaderButton path="/" icon>
       <img src={AppIcon.src} alt="App Icon" class="h-12 w-12" />
-    </div>
+    </HeaderButton>
     <div class="flex flex-row flex-wrap justify-center py-2">
       <HeaderButton path="/posts/post-1">
         <HeaderIcon slot="before" paths={rocketIconPaths} />
