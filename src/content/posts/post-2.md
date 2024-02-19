@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/LayoutMd.astro
 title: 'Page 2 Blog Post'
 pubDate: 2024-02-20
 description: 'This is the content for the Page 2 in Markdown Blog App.'

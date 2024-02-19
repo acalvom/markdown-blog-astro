@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/LayoutMd.astro
-title: 'Page 3 Blog Post'
-pubDate: 2024-02-21
-description: 'This is the content for the Page 3 in Markdown Blog App.'
+title: 'Page 1 Blog Post'
+pubDate: 2024-02-19
+description: 'This is the content for the Page 1 in Markdown Blog App.'
 author: 'acalvom'
 image:
-  src: 'https://images.pexels.com/photos/6424584/pexels-photo-6424584.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-  alt: 'HTML image page 3'
+  src: 'https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+  alt: 'HTML image page 1'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
