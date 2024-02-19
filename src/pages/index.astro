@@ -1,8 +1,13 @@
 ---
+import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import PageTitle from '@components/PageTitle/PageTitle.astro'
+import PostPreview from '@components/PostPreview/PostPreview.astro'
+
+const allPosts = await getCollection('posts')
 ---
 
 <Layout title="Markdown app with Astro">
   <PageTitle title="⚖️ Markdown Blog App" subtitle="This is the main page" />
+  {allPosts.map((post) => <PostPreview post={post.data} path={post.slug} />)}
 </Layout>
