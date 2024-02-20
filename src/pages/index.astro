@@ -5,9 +5,12 @@ import PageTitle from '@components/PageTitle/PageTitle.astro'
 import PostPreview from '@components/PostPreview/PostPreview.astro'
 
 const allPosts = await getCollection('posts')
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+)
 ---
 
 <Layout title="Markdown app with Astro">
   <PageTitle title="Markdown Blog App" subtitle="This is the main page" />
-  {allPosts.map((post) => <PostPreview post={post.data} path={post.slug} />)}
+  {sortedPosts.map((post) => <PostPreview post={post.data} path={post.slug} />)}
 </Layout>
