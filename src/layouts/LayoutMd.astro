@@ -16,7 +16,7 @@ const { title, description, author, image, pubDate } = frontmatter
   <article class="prose mx-auto max-w-3xl px-6">
     <PageTitle title={title} subtitle={description} />
     <img class="w-full" src={image.src} alt={image.alt} />
-    <p class="my-4 text-xs lg:text-sm font-thin italic text-gray-200">
+    <p class="my-4 text-xs font-thin italic text-gray-200 lg:text-sm">
       Published on {formatDate(pubDate)} by <strong>{author}</strong>
     </p>
     <slot />
@@ -39,7 +39,7 @@ const { title, description, author, image, pubDate } = frontmatter
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     margin-top: 24px;
     margin-bottom: 8px;
     font-weight: 100;
@@ -47,13 +47,15 @@ const { title, description, author, image, pubDate } = frontmatter
 
   p {
     font-weight: 300;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     text-align: justify;
     margin-bottom: 12px;
+    color: #dfdfdf;
   }
 
-  ol {
+  ul {
     margin-left: 24px;
+    color: #dfdfdf;
   }
 
   li::marker {
@@ -62,10 +64,10 @@ const { title, description, author, image, pubDate } = frontmatter
 
   @media (min-width: 1024px) {
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
     p {
-      font-size: 0.85rem;
+      font-size: 1rem;
     }
   }
 </style>
