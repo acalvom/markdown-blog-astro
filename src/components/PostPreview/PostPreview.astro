@@ -1,6 +1,6 @@
 ---
 import type { TPostMeta } from '@interfaces/Post'
-import HeaderButton from '@components/Header/HeaderButton.astro'
+import Button from '@components/Shared/Button.astro'
 import { formatDate } from '@utils/date'
 
 interface Props {
@@ -21,8 +21,8 @@ const { title, description, author, pubDate, image } = post
       <p class="mb-4 text-xs font-light italic text-gray-300 md:text-sm lg:text-sm">
         By {author} on {formatDate(pubDate)}
       </p>
-      <HeaderButton path={`posts/${path}`}
-        ><span class="mx-auto font-semibold">Read more</span></HeaderButton
+      <Button path={`posts/${path}`}
+        ><span class="mx-auto font-semibold">Read more</span></Button
       >
     </div>
   </div>

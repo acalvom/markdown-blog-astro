@@ -1,5 +1,5 @@
 ---
-import HeaderButton from './HeaderButton.astro'
+import Button from '../Shared/Button.astro'
 import HeaderIcon from './HeaderIcon.astro'
 import AppIcon from '@assets/icon.svg'
 import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '@utils/icon-paths'
@@ -7,26 +7,26 @@ import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '
 
 <header class="max-w-screen mx-auto px-4 py-4 md:px-8">
   <nav class="flex w-full flex-col items-center justify-between md:flex-row">
-    <HeaderButton path="/" icon>
+    <Button path="/" icon>
       <img src={AppIcon.src} alt="App Icon" class="h-12 w-12" />
-    </HeaderButton>
+    </Button>
     <div class="flex flex-row flex-wrap justify-center py-2">
-      <HeaderButton path="/posts/post-1">
+      <Button path="/posts/post-1">
         <HeaderIcon slot="before" paths={rocketIconPaths} />
         Post 1
-      </HeaderButton>
-      <HeaderButton path="/posts/post-2">
+      </Button>
+      <Button path="/posts/post-2">
         <HeaderIcon slot="before" paths={aboutIconPaths} />
         Post 2
-      </HeaderButton>
-      <HeaderButton path="/posts/post-3">
+      </Button>
+      <Button path="/posts/post-3">
         <HeaderIcon slot="before" paths={sofaIconPaths} />
         Post 3
-      </HeaderButton>
-      <HeaderButton path="/posts/post-4">
+      </Button>
+      <Button path="/posts/post-4">
         <HeaderIcon slot="before" paths={alignIconPaths} />
         Post 4
-      </HeaderButton>
+      </Button>
     </div>
   </nav>
 </header>
