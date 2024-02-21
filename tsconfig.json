@@ -11,7 +11,9 @@
       "@content/*": ["src/content/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@mocks/*": ["src/mocks/*"],
       "@pages/*": ["src/pages/*"],
+      "@services/*": ["src/services/*"],
       "@utils/*": ["src/utils/*"]
     }
   }
