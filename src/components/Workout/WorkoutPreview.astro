@@ -1,0 +1,24 @@
+---
+import type { Workout } from '@interfaces/Workout'
+import Cardio from '@assets/cardio.svg'
+
+
+
+interface Props {
+  workout: Workout
+  path: string
+}
+
+const { workout } = Astro.props
+const { difficulty, equipment, instructions, muscle, name, type } = workout
+---
+
+<article class="m-4 px-4 py-4 md:px-8 border rounded-lg w-full md:w-1/2 lg:w-1/4">
+  <img class="max-w-14" src={Cardio.src} alt="Cardio" />
+  <h4>{name}</h4>
+  <p>{type}</p>
+  <p>{difficulty}</p>
+  <p>{equipment}</p>
+  <p>{muscle}</p>
+
+</article>
