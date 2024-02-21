@@ -11,6 +11,6 @@ const sortedPosts = allPosts.sort(
 ---
 
 <Layout title="Fitness App with Astro">
-  <PageTitle title="🗞 Latest Fitness News" subtitle="Latest news about fitness updates"></PageTitle>
+  <PageTitle title="🗞 Latest Fitness News" subtitle="Latest news about fitness updates" />
   {sortedPosts.map((post) => <PostPreview post={post.data} path={post.slug} />)}
 </Layout>
