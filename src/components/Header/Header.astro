@@ -1,6 +1,6 @@
 ---
 import Button from '../Shared/Button.astro'
-import HeaderIcon from './HeaderIcon.astro'
+import Icon from '../Shared/Icon.astro'
 import AppIcon from '@assets/icon.svg'
 import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '@utils/icon-paths'
 ---
@@ -12,19 +12,19 @@ import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '
     </Button>
     <div class="flex flex-row flex-wrap justify-center py-2">
       <Button path="/workouts">
-        <HeaderIcon slot="before" paths={rocketIconPaths} />
+        <Icon slot="before" paths={rocketIconPaths} />
         Workouts
       </Button>
       <Button path="/posts/post-2">
-        <HeaderIcon slot="before" paths={aboutIconPaths} />
+        <Icon slot="before" paths={aboutIconPaths} />
         Post 2
       </Button>
       <Button path="/posts/post-3">
-        <HeaderIcon slot="before" paths={sofaIconPaths} />
+        <Icon slot="before" paths={sofaIconPaths} />
         Post 3
       </Button>
       <Button path="/posts/post-4">
-        <HeaderIcon slot="before" paths={alignIconPaths} />
+        <Icon slot="before" paths={alignIconPaths} />
         Post 4
       </Button>
     </div>
