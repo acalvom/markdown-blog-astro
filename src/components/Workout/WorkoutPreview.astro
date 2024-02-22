@@ -1,24 +1,55 @@
 ---
 import type { Workout } from '@interfaces/Workout'
+import Icon from '../Shared/Icon.astro'
+import LevelBadge from '../Shared/LevelBadge.astro'
+import Badge from '../Shared/Badge.astro'
+import Button from '../Shared/Button.astro'
 import Cardio from '@assets/cardio.svg'
 
-
+import {
+  bodyIconPaths,
+  categoriesIconPaths,
+  levelIconPaths,
+  equipmentIconPaths
+} from '@utils/icon-paths'
 
 interface Props {
   workout: Workout
   path: string
 }
 
-const { workout } = Astro.props
+const { workout, path } = Astro.props
 const { difficulty, equipment, instructions, muscle, name, type } = workout
 ---
 
-<article class="m-4 px-4 py-4 md:px-8 border rounded-lg w-full md:w-1/2 lg:w-1/4">
-  <img class="max-w-14" src={Cardio.src} alt="Cardio" />
-  <h4>{name}</h4>
-  <p>{type}</p>
-  <p>{difficulty}</p>
-  <p>{equipment}</p>
-  <p>{muscle}</p>
+<article class="m-4 w-full rounded-lg border px-8 py-8 sm:px-16 sm:max-w-sm md:w-1/2 md:px-8 lg:w-1/4">
+  <div class="flex flex-row items-center gap-6">
+    <img class="max-w-14" src={Cardio.src} alt="Cardio" />
+    <h4 class="text-xl font-extralight text-white lg:text-2xl">{name}</h4>
+  </div>
+  <div class="mt-6 flex flex-col">
 
+    <!-- TODO: Component for this -->
+    <p class="mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+      <Icon paths={levelIconPaths} />
+      Level:<LevelBadge level={difficulty} align="right" />
+    </p>
+    <p class="mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+      <Icon paths={categoriesIconPaths} />
+      Category:
+      <Badge bgLevel={100} text={type} align="right" />
+    </p>
+
+    <p class="mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+      <Icon paths={bodyIconPaths} />
+      Muscles: <Badge bgLevel={200} text={muscle} align="right" />
+    </p>
+
+    <p class="mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+      <Icon paths={equipmentIconPaths} />
+      Equipment: <Badge bgLevel={300} text={equipment} align="right" />
+    </p>
+
+    <Button path={`/${path}`}><span class="mx-auto font-semibold">Instructions</span></Button>
+  </div>
 </article>

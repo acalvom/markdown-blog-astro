@@ -1,0 +1,24 @@
+---
+interface Props {
+  level: string
+  align?: 'left' | 'center' | 'right'
+}
+
+const { level, align = 'left' } = Astro.props
+---
+
+<span
+  class:list={[
+    'my-2 w-fit rounded px-2.5 py-0.5 text-xs font-medium',
+    {
+      'bg-green-100 text-green-800': level === 'beginner',
+      'bg-yellow-100 text-yellow-800': level === 'intermediate',
+      'bg-red-100 text-red-800': level === 'expert',
+      'ml-auto': align === 'right',
+      'mx-auto': align === 'center',
+      'mr-auto': align === 'left'
+    }
+  ]}
+>
+  {level.toUpperCase()}
+</span>

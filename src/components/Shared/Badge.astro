@@ -1,0 +1,23 @@
+---
+import { capitalize } from '@utils/capitalize'
+
+interface Props {
+  bgLevel: number
+  letterLevel?: number
+  text: string
+  align?: 'left' | 'center' | 'right'
+}
+
+const { bgLevel, letterLevel = 900, text, align = 'left' } = Astro.props
+---
+
+<span
+  class:list={[
+    `my-2 w-fit rounded px-2.5 py-0.5 text-xs font-medium text-cyan-${letterLevel} bg-cyan-${bgLevel}`,
+    {
+      'ml-auto': align === 'right',
+      'mx-auto': align === 'center',
+      'mr-auto': align === 'left'
+    }
+  ]}>{capitalize(text)}</span
+>
