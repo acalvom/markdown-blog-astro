@@ -25,3 +25,41 @@ export const alignIconPaths: TIconPaths = [
   'M13 10h-6',
   'M11 7h-4'
 ]
+
+export const categoriesIconPaths: TIconPaths = [
+  'M14 4h6v6h-6z',
+  'M4 14h6v6h-6z',
+  'M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0',
+  'M7 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0'
+]
+
+export const equipmentIconPaths: TIconPaths = [
+  'M2 12h1',
+  'M6 8h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2',
+  'M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1z',
+  'M9 12h6',
+  'M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1z',
+  'M18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2',
+  'M22 12h-1'
+]
+
+export const bodyIconPaths: TIconPaths = [
+  'M4 8v-2a2 2 0 0 1 2 -2h2',
+  'M4 16v2a2 2 0 0 0 2 2h2',
+  'M16 4h2a2 2 0 0 1 2 2v2',
+  'M16 20h2a2 2 0 0 0 2 -2v-2',
+  'M12 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0',
+  'M10 17v-1a2 2 0 1 1 4 0v1',
+  'M8 10c.666 .666 1.334 1 2 1h4c.666 0 1.334 -.334 2 -1',
+  'M12 11v3'
+]
+
+export const levelIconPaths: TIconPaths = [
+  'M18 21v-14',
+  'M9 15l3 -3l3 3',
+  'M15 10l3 -3l3 3',
+  'M3 21l18 0',
+  'M12 21l0 -9',
+  'M3 6l3 -3l3 3',
+  'M6 21v-18'
+]
