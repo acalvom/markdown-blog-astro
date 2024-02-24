@@ -5,19 +5,23 @@ interface Props {
   bgLevel: number
   letterLevel?: number
   text: string
-  align?: 'left' | 'center' | 'right'
 }
 
-const { bgLevel, letterLevel = 900, text, align = 'left' } = Astro.props
+const { bgLevel, letterLevel = 900, text } = Astro.props
 ---
 
 <span
   class:list={[
-    `my-2 w-fit rounded px-2.5 py-0.5 text-xs font-medium text-cyan-${letterLevel} bg-cyan-${bgLevel}`,
+    `my-2 w-fit rounded px-2.5 py-0.5 text-xs font-medium mx-1`,
     {
-      'ml-auto': align === 'right',
-      'mx-auto': align === 'center',
-      'mr-auto': align === 'left'
+      'bg-cyan-100': bgLevel === 100,
+      'bg-cyan-200': bgLevel === 200,
+      'bg-cyan-300': bgLevel === 300,
+      'bg-cyan-400': bgLevel === 400,
+      'text-cyan-600': letterLevel === 600,
+      'text-cyan-700': letterLevel === 700,
+      'text-cyan-800': letterLevel === 800,
+      'text-cyan-900': letterLevel === 900,
     }
   ]}>{capitalize(text)}</span
 >
