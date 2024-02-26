@@ -1,0 +1,24 @@
+---
+import Layout from '@layouts/Layout.astro'
+import PageTitle from '@components/PageTitle/PageTitle.astro'
+import { getWorkoutById } from '@services/workout'
+import type { Workout } from '@interfaces/Workout'
+import { mockedWorkout } from '@mocks/oneWorkout'
+
+export const prerender = false
+const id = Astro.params
+// const workout = await getWorkoutById(id)
+const { bodyPart, equipment, gifUrl, instructions, name, secondaryMuscles, target } = mockedWorkout 
+---
+
+<Layout title={name}>
+  <article class="prose mx-auto max-w-3xl px-6">
+    <PageTitle title={name} />
+    <img class="w-full" src={gifUrl} alt={name} />
+    <h2>Instructions</h2>
+    <ul>
+      {instructions.map((instruction: string) => <ol class="list-decimal">{instruction}</ol>)}
+    </ul>
+
+  </article>
+</Layout>
