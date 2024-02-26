@@ -4,19 +4,14 @@ import Badge from '../Shared/Badge.astro'
 import Button from '../Shared/Button.astro'
 import CardBages from './CardBadges.astro'
 
-import {
-  bodyIconPaths,
-  categoriesIconPaths,
-  equipmentIconPaths
-} from '@utils/icon-paths'
+import { bodyIconPaths, categoriesIconPaths, equipmentIconPaths } from '@utils/icon-paths'
 import { capitalize } from '@utils/capitalize'
 
 interface Props {
   workout: Workout
-  path: string
 }
 
-const { workout, path } = Astro.props
+const { workout } = Astro.props
 const { bodyPart, equipment, gifUrl, id, instructions, name, secondaryMuscles, target } = workout
 ---
 
