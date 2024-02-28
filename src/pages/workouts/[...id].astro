@@ -1,24 +1,72 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import PageTitle from '@components/PageTitle/PageTitle.astro'
+import Icon from '@components/Shared/Icon.astro'
 import { getWorkoutById } from '@services/workout'
-import type { Workout } from '@interfaces/Workout'
-import { mockedWorkout } from '@mocks/oneWorkout'
+import { capitalize } from '@utils/capitalize'
+import { bodyIconPaths, equipmentIconPaths, targetIconPaths } from '@utils/icon-paths'
 
 export const prerender = false
 const id = Astro.params
-// const workout = await getWorkoutById(id)
-const { bodyPart, equipment, gifUrl, instructions, name, secondaryMuscles, target } = mockedWorkout 
+const workout = await getWorkoutById(id)
+const {
+  bodyPart: rawBodyPart,
+  equipment: rawEquipment,
+  gifUrl,
+  instructions,
+  name: rawName,
+  secondaryMuscles: rawSecondaryMuscles,
+  target: rawTarget
+} = workout
+
+const { name, bodyPart, target, equipment, secondaryMuscles } = {
+  ...workout,
+  name: capitalize(rawName),
+  bodyPart: capitalize(rawBodyPart),
+  target: capitalize(rawTarget),
+  equipment: capitalize(rawEquipment),
+  secondaryMuscles: rawSecondaryMuscles.map((muscle: string) => capitalize(muscle))
+}
 ---
 
 <Layout title={name}>
   <article class="prose mx-auto max-w-3xl px-6">
-    <PageTitle title={name} />
-    <img class="w-full" src={gifUrl} alt={name} />
-    <h2>Instructions</h2>
-    <ul>
-      {instructions.map((instruction: string) => <ol class="list-decimal">{instruction}</ol>)}
-    </ul>
+    <PageTitle title={capitalize(name)} subtitle={capitalize(bodyPart)} />
+    <img
+      class="mx-auto w-full rounded-lg border-2 border-red-400 shadow-sm shadow-current sm:max-w-sm"
+      src={gifUrl}
+      alt={name}
+    />
+    <div
+      class="my-4 flex flex-col justify-center border-y bg-gray-900 py-4 text-gray-200 md:flex-row md:gap-4"
+    >
+      <div class="flex flex-col items-center justify-around md:pr-2">
+        <div class="md:text-md mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+          <Icon paths={targetIconPaths} />
+          <p class="font-semibold">{target}</p>
+        </div>
+        <div class="md:text-md mb-3 flex flex-row items-center gap-2 text-sm font-medium">
+          <Icon paths={equipmentIconPaths} />
+          <p class="font-semibold">{equipment}</p>
+        </div>
+      </div>
+      <div class="md:text-md flex flex-col items-center text-sm font-medium md:pl-2">
+        <p class="mb-2 flex flex-row items-center gap-2">
+          <Icon paths={bodyIconPaths} /> Secondary Muscles
+        </p>
+        <ul class="list-inside list-disc">
+          {secondaryMuscles.map((muscle: string) => <li>{muscle}</li>)}
+        </ul>
+      </div>
+    </div>
 
+    <h3 class="mb-2 mt-6 text-2xl font-extralight lg:text-3xl">Instructions</h3>
+    <ul class="list-inside list-decimal">
+      {
+        instructions.map((instruction: string) => (
+          <li class="mb-3 text-sm font-light text-gray-200">{instruction}</li>
+        ))
+      }
+    </ul>
   </article>
 </Layout>
