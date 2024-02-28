@@ -54,12 +54,10 @@ export const bodyIconPaths: TIconPaths = [
   'M12 11v3'
 ]
 
-export const levelIconPaths: TIconPaths = [
-  'M18 21v-14',
-  'M9 15l3 -3l3 3',
-  'M15 10l3 -3l3 3',
-  'M3 21l18 0',
-  'M12 21l0 -9',
-  'M3 6l3 -3l3 3',
-  'M6 21v-18'
+export const targetIconPaths: TIconPaths = [
+  'M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0',
+  'M12 7a5 5 0 1 0 5 5',
+  'M13 3.055a9 9 0 1 0 7.941 7.945',
+  'M15 6v3h3l3 -3h-3v-3z',
+  'M15 9l-3 3'
 ]

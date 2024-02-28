@@ -17,7 +17,9 @@ export const getAllWorkouts = async (): Promise<Array<Workout>> => {
   }
 }
 
-export const getWorkoutById = async ({ id }: { id: string }): Promise<Workout> => {
+export const getWorkoutById = async ({
+  id
+}: Record<string, string | undefined>): Promise<Workout> => {
   try {
     const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`, {
       method: 'GET',
