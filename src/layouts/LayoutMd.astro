@@ -1,6 +1,6 @@
 ---
 import Layout from './Layout.astro'
-import PageTitle from '@components/PageTitle/PageTitle.astro'
+import Title from '@components/Shared/Title.astro'
 import { formatDate } from '@utils/date.ts'
 import type { TPostMeta } from '@interfaces/Post'
 
@@ -14,7 +14,7 @@ const { title, description, author, image, pubDate } = frontmatter
 
 <Layout title={frontmatter.title}>
   <article class="prose mx-auto max-w-3xl px-6">
-    <PageTitle title={title} subtitle={description} />
+    <Title title={title} subtitle={description} />
     <img class="w-full" src={image.src} alt={image.alt} />
     <p class="my-4 text-xs font-thin italic text-gray-200 lg:text-sm">
       Published on {formatDate(pubDate)} by <strong>{author}</strong>

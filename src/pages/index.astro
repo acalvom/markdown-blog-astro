@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
-import PageTitle from '@components/PageTitle/PageTitle.astro'
+import Title from '@components/Shared/Title.astro'
 import PostPreview from '@components/PostPreview/PostPreview.astro'
 
 const allPosts = await getCollection('posts')
@@ -11,6 +11,6 @@ const sortedPosts = allPosts.sort(
 ---
 
 <Layout title="Fitness App with Astro">
-  <PageTitle title="🗞 Latest Fitness News" subtitle="Latest news about fitness updates" />
+  <Title title="🗞 Latest Fitness News" subtitle="Latest news about fitness updates" />
   {sortedPosts.map((post) => <PostPreview post={post.data} path={post.slug} />)}
 </Layout>

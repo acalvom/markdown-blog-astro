@@ -1,19 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import PageTitle from '@components/PageTitle/PageTitle.astro'
+import Title from '@components/Shared/Title.astro'
 import WorkoutPreview from '@components/Workout/WorkoutPreview.astro'
 import { getAllWorkouts } from '@services/workout'
 import type { Workout } from '@interfaces/Workout'
-// import { mockedWorkouts } from '@mocks/workouts'
-const workouts = await getAllWorkouts()
-// console.log('🚀 ~ workouts:', workouts)
-// TODO: remove logs
 
+const workouts = await getAllWorkouts()
 ---
 
 <Layout title="Workouts for beasts">
-  <!-- TODO: create component Workouts wrapping this -->
-  <PageTitle title="💪🏼 Workouts for Beasts" subtitle="Best workouts to be your best version" />
+  <Title title="💪🏼 Workouts for Beasts" subtitle="Best workouts to be your best version" />
   <div class="flex flex-wrap justify-evenly">
     {workouts.map((workout: Workout) => <WorkoutPreview workout={workout} />)}
   </div>
