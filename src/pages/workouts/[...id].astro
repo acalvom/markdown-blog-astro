@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Title from '@components/Shared/Title.astro'
-import Icon from '@components/Shared/Icon.astro'
+import { Icon } from '@components/Shared/Icon'
 import { getWorkoutById } from '@services/workout'
 import { capitalize } from '@utils/capitalize'
 import { bodyIconPaths, equipmentIconPaths, targetIconPaths } from '@utils/icon-paths'
@@ -38,21 +38,21 @@ const { name, bodyPart, target, equipment, secondaryMuscles } = {
       alt={name}
     />
     <div
-      class="py-4 my-4 flex flex-col justify-center border-y bg-gray-900 text-gray-200 md:flex-row md:gap-4"
+      class="my-4 flex flex-col justify-center border-y bg-gray-900 py-4 text-gray-200 md:flex-row md:gap-4"
     >
       <div class="flex flex-col items-center justify-around md:pr-2">
         <div class="md:text-md mb-3 flex flex-row items-center gap-2 text-sm font-medium">
-          <Icon paths={targetIconPaths} />
+          <Icon client:visible paths={targetIconPaths} />
           <p class="font-semibold">{target}</p>
         </div>
         <div class="md:text-md mb-3 flex flex-row items-center gap-2 text-sm font-medium">
-          <Icon paths={equipmentIconPaths} />
+          <Icon client:visible paths={equipmentIconPaths} />
           <p class="font-semibold">{equipment}</p>
         </div>
       </div>
       <div class="md:text-md flex flex-col items-center text-sm font-medium md:pl-2">
         <p class="mb-2 flex flex-row items-center gap-2">
-          <Icon paths={bodyIconPaths} /> Secondary Muscles
+          <Icon client:visible paths={bodyIconPaths} /> Secondary Muscles
         </p>
         <ul class="list-inside list-disc">
           {secondaryMuscles.map((muscle: string) => <li>{muscle}</li>)}

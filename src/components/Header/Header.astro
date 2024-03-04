@@ -1,31 +1,19 @@
 ---
-import Button from '../Shared/Button.astro'
-import Icon from '../Shared/Icon.astro'
+import { Button } from '@components/Shared/Button'
+import { Icon } from '@components/Shared/Icon'
+import { rocketIconPaths } from '@utils/icon-paths'
 import AppIcon from '@assets/icon.svg'
-import { rocketIconPaths, aboutIconPaths, sofaIconPaths, alignIconPaths } from '@utils/icon-paths'
 ---
 
 <header class="max-w-screen mx-auto px-4 py-4 md:px-8">
   <nav class="flex w-full flex-col items-center justify-between md:flex-row">
-    <Button path="/" icon>
+    <Button client:visible path="/" icon>
       <img src={AppIcon.src} alt="App Icon" class="h-12 w-12" />
     </Button>
     <div class="flex flex-row flex-wrap justify-center py-2">
-      <Button path="/workouts">
-        <Icon slot="before" paths={rocketIconPaths} />
+      <Button client:visible path="/workouts">
+        <Icon paths={rocketIconPaths} />
         Workouts
-      </Button>
-      <Button path="/posts/post-2">
-        <Icon slot="before" paths={aboutIconPaths} />
-        Post 2
-      </Button>
-      <Button path="/posts/post-3">
-        <Icon slot="before" paths={sofaIconPaths} />
-        Post 3
-      </Button>
-      <Button path="/posts/post-4">
-        <Icon slot="before" paths={alignIconPaths} />
-        Post 4
       </Button>
     </div>
   </nav>
