@@ -1,6 +1,6 @@
 ---
 import type { TPostMeta } from '@interfaces/Post'
-import { Button } from '@components/Shared/Button'
+import { LinkButton } from '@components/Shared/LinkButton'
 import { formatDate } from '@utils/date'
 
 interface Props {
@@ -23,8 +23,8 @@ const { title, description, author, pubDate, image } = post
       <p class="mb-4 text-xs font-light italic text-gray-300 md:text-sm lg:text-sm">
         By {author} on {formatDate(pubDate)}
       </p>
-      <Button client:visible path={`posts/${path}`}
-        ><span class="mx-auto font-semibold">Read more</span></Button
+      <LinkButton client:visible path={`posts/${path}`}
+        ><span class="mx-auto font-semibold">Read more</span></LinkButton
       >
     </div>
   </div>

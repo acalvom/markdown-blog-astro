@@ -1,13 +1,13 @@
-import { Badge } from '@components/Shared/Badge.tsx'
-import { Button } from '@components/Shared/Button.tsx'
-import { CardBadges } from './CardBadges.tsx'
+import { Badge } from '@components/Shared/Badge'
+import { LinkButton } from '@components/Shared/LinkButton'
+import { CardBadges } from './CardBadges'
 import type { Workout } from '@interfaces/Workout'
 import { capitalize } from '@utils/capitalize'
 import { categoriesIconPaths, equipmentIconPaths, bodyIconPaths } from '@utils/icon-paths'
 
 interface WorkoutPreviewProps {
   workout: Workout
-  key: number
+  key: string
 }
 
 export const WorkoutPreview = ({ workout }: WorkoutPreviewProps) => {
@@ -36,9 +36,9 @@ export const WorkoutPreview = ({ workout }: WorkoutPreviewProps) => {
           ))}
         </CardBadges>
       </div>
-      <Button path={`workouts/${id}`}>
+      <LinkButton path={`workouts/${id}`}>
         <span className="mx-auto font-semibold">Instructions</span>
-      </Button>
+      </LinkButton>
     </article>
   )
 }
