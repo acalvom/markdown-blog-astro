@@ -1,16 +1,10 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import Title from '@components/Shared/Title.astro'
-import WorkoutPreview from '@components/Workout/WorkoutPreview.astro'
-import { getAllWorkouts } from '@services/workout'
-import type { Workout } from '@interfaces/Workout'
-
-const workouts = await getAllWorkouts()
+import { WorkoutsPage } from '@components/Workout/WorkoutsPage'
 ---
 
-<Layout title="Workouts for beasts">
-  <Title title="💪🏼 Workouts for Beasts" subtitle="Best workouts to be your best version" />
-  <div class="flex flex-wrap justify-evenly">
-    {workouts.map((workout: Workout) => <WorkoutPreview workout={workout} />)}
-  </div>
+<Layout title="Hard Work Pays Off">
+  <Title title="Hard Work Pays Off" subtitle=" 🫵🏽 It's you against you 🫵🏽" />
+  <WorkoutsPage client:visible />
 </Layout>
