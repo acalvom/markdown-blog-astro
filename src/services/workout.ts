@@ -39,3 +39,22 @@ export const getWorkoutById = async ({
     throw new Error('Failed to fetch workout' + id + error)
   }
 }
+
+export const getWorkoutsByName = async (name: string): Promise<Array<Workout>> => {
+  try {
+    const response = await fetch(
+      `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=100`,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
+          'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
+        }
+      }
+    )
+    return await response.json()
+  } catch (error: any) {
+    throw new Error('Failed to fetch workout' + name + error)
+  }
+}
