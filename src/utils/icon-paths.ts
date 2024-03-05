@@ -74,3 +74,8 @@ export const searchIconPaths: TIconPaths = [
   'M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0',
   'M21 21l-6 -6'
 ]
+
+export const closeIconPaths: TIconPaths = [
+  'M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0',
+  'M10 10l4 4m0 -4l-4 4'
+]
