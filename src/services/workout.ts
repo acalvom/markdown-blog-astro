@@ -1,22 +1,24 @@
 import type { Workout } from '@interfaces/Workout'
+import { mockedWorkouts } from '@mocks/workouts'
 
 // TODO include library for fetch
 export const getAllWorkouts = async (page: number = 0): Promise<Array<Workout>> => {
   const offset = 10 * page
 
   try {
-    const response = await fetch(
-      `https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=${offset}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
-          'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
-        }
-      }
-    )
-    return await response.json()
+    // const response = await fetch(
+    //   `https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=${offset}`,
+    //   {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
+    //       'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
+    //     }
+    //   }
+    // )
+    // return await response.json()
+    return mockedWorkouts
   } catch (error: any) {
     throw new Error('Failed to fetch workouts' + error)
   }
@@ -26,15 +28,16 @@ export const getWorkoutById = async ({
   id
 }: Record<string, string | undefined>): Promise<Workout> => {
   try {
-    const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
-        'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
-      }
-    })
-    return await response.json()
+    // const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
+    //     'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
+    //   }
+    // })
+    // return await response.json()
+    return mockedWorkouts[0]
   } catch (error: any) {
     throw new Error('Failed to fetch workout' + id + error)
   }
@@ -42,18 +45,19 @@ export const getWorkoutById = async ({
 
 export const getWorkoutsByName = async (name: string): Promise<Array<Workout>> => {
   try {
-    const response = await fetch(
-      `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=100`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
-          'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
-        }
-      }
-    )
-    return await response.json()
+    // const response = await fetch(
+    //   `https://exercisedb.p.rapidapi.com/exercises/name/${name}?limit=100`,
+    //   {
+    //     method: 'GET',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'X-RapidAPI-Key': import.meta.env.PUBLIC_API_KEY,
+    //       'X-RapidAPI-Host': import.meta.env.PUBLIC_API_HOST
+    //     }
+    //   }
+    // )
+    // return await response.json()
+    return mockedWorkouts
   } catch (error: any) {
     throw new Error('Failed to fetch workout' + name + error)
   }

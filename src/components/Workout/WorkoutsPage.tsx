@@ -4,6 +4,7 @@ import { getAllWorkouts, getWorkoutsByName } from '@services/workout'
 import { WorkoutPreview } from './WorkoutPreview'
 import { Pagination } from '@components/Shared/Pagination'
 import { Search } from '@components/Shared/Search'
+import { FilterWorkout } from './FilterWorkout'
 
 export const WorkoutsPage = () => {
   const [page, setPage] = useState(0)
@@ -26,6 +27,7 @@ export const WorkoutsPage = () => {
   return (
     <>
       <Search setSearch={setSearch} />
+      <FilterWorkout />
       <div className="flex flex-wrap justify-evenly">
         {workouts.length > 0 &&
           workouts.map((workout: Workout) => <WorkoutPreview workout={workout} key={workout.id} />)}
