@@ -14,7 +14,7 @@ export const Search = ({ setSearch }: SearchProps) => {
   const handleSearch = () => {
     if (input.length > 0) {
       setIsSearching(true)
-      setSearch(input)
+      setSearch(input.toLowerCase())
     }
     if (isSearching) {
       setIsSearching(false)
